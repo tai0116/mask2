@@ -16,8 +16,8 @@ class _NavBottomState extends State<NavBottom> {
         children: [
           Divider(
             color: Colors.black,
-            indent: 8.0,
-            endIndent: 8.0,
+            indent: 32.0,
+            endIndent: 32.0,
           ),
           Text(widget.title),
         ],
