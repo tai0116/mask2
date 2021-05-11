@@ -77,24 +77,22 @@ class _FirstPageState extends State<FirstPage> {
                 heroTag: ('larger'),
                 backgroundColor: Colors.blueGrey,
                 foregroundColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    if (screenIndex == 3) {
-                      null;
-                    } else {
-                      screenIndex++;
-                    }
-                    if (screenIndex == 0) {
-                      title = '90mm × 111mm';
-                    } else if (screenIndex == 1) {
-                      title = '90mm × 112mm';
-                    } else if (screenIndex == 2) {
-                      title = '90mm × 113mm';
-                    } else if (screenIndex == 3) {
-                      title = '90mm × 114mm';
-                    }
-                  });
-                },
+                onPressed: (screenIndex == 3)
+                    ? null
+                    : () {
+                        setState(() {
+                          screenIndex++;
+                          if (screenIndex == 0) {
+                            title = '90mm × 111mm';
+                          } else if (screenIndex == 1) {
+                            title = '90mm × 112mm';
+                          } else if (screenIndex == 2) {
+                            title = '90mm × 113mm';
+                          } else if (screenIndex == 3) {
+                            title = '90mm × 114mm';
+                          }
+                        });
+                      },
                 icon: Icon(Icons.arrow_forward),
                 label: Text('少し大きい'),
               )
