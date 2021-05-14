@@ -39,17 +39,18 @@ class _NavBottomState extends State<NavBottom> {
                     child: Image.network(imageOptions[index]),
                   ),
                   ElevatedButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.blue),
-                      ),
-                      child: Text(
-                        'この商品の詳細をAmazonで確認する',
-                        style: TextStyle(fontSize: 15.0),
-                      ),
-                      onPressed: () {}),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.brown.shade100),
+                    ),
+                    child: Text(
+                      'この商品の詳細をAmazonで確認する',
+                      style: TextStyle(fontSize: 15.0),
+                    ),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             );

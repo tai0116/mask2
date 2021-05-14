@@ -50,7 +50,7 @@ class _SecondPageState extends State<SecondPage> {
             children: <Widget>[
               FloatingActionButton.extended(
                 heroTag: ('smaller'),
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.blueGrey.shade400,
                 foregroundColor: Colors.white,
                 onPressed: (screenIndex == 0)
                     ? null
@@ -74,7 +74,7 @@ class _SecondPageState extends State<SecondPage> {
               Spacer(),
               FloatingActionButton.extended(
                 heroTag: ('larger'),
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.blueGrey.shade400,
                 foregroundColor: Colors.white,
                 onPressed: () {
                   setState(() {

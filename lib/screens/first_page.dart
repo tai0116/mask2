@@ -51,7 +51,7 @@ class _FirstPageState extends State<FirstPage> {
             children: <Widget>[
               FloatingActionButton.extended(
                 heroTag: ('smaller'),
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.blueGrey.shade400,
                 foregroundColor: Colors.white,
                 onPressed: (screenIndex == 0)
                     ? null
@@ -75,7 +75,7 @@ class _FirstPageState extends State<FirstPage> {
               Spacer(),
               FloatingActionButton.extended(
                 heroTag: ('larger'),
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.blueGrey.shade400,
                 foregroundColor: Colors.white,
                 onPressed: (screenIndex == 3)
                     ? null
