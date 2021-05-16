@@ -28,18 +28,15 @@ class _FirstPageState extends State<FirstPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom('1'),
-    NavBottom('2'),
-    NavBottom('3'),
-    NavBottom('4'),
+    NavBottom(key: UniqueKey(), title: '90mm × 111mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 112mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 113mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 114mm'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
       body: Center(
         child: widgetOptions[screenIndex],
       ),
@@ -58,15 +55,6 @@ class _FirstPageState extends State<FirstPage> {
                     : () {
                         setState(() {
                           screenIndex--;
-                          if (screenIndex == 0) {
-                            title = '90mm × 1mm';
-                          } else if (screenIndex == 1) {
-                            title = '90mm × 112mm';
-                          } else if (screenIndex == 2) {
-                            title = '90mm × 113mm';
-                          } else if (screenIndex == 3) {
-                            title = '90mm × 114mm';
-                          }
                         });
                       },
                 icon: Icon(Icons.arrow_back),
@@ -82,15 +70,6 @@ class _FirstPageState extends State<FirstPage> {
                     : () {
                         setState(() {
                           screenIndex++;
-                          if (screenIndex == 0) {
-                            title = '90mm × 111mm';
-                          } else if (screenIndex == 1) {
-                            title = '90mm × 112mm';
-                          } else if (screenIndex == 2) {
-                            title = '90mm × 113mm';
-                          } else if (screenIndex == 3) {
-                            title = '90mm × 114mm';
-                          }
                         });
                       },
                 icon: Icon(Icons.arrow_forward),

@@ -26,11 +26,11 @@ class _SecondPageState extends State<SecondPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom('1'),
-    NavBottom('2'),
-    NavBottom('3'),
-    NavBottom('4'),
-    NavBottom('5'),
+    NavBottom(title: '1'),
+    NavBottom(title: '2'),
+    NavBottom(title: '3'),
+    NavBottom(title: '4'),
+    NavBottom(title: '5'),
   ];
 
   @override
