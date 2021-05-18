@@ -15,6 +15,12 @@ class _ThirdState extends State<Third> {
     "120mm × 143mm",
   ];
 
+  List<int> _pageNumbers = [
+    0,
+    1,
+    2,
+    3,
+  ];
   //=は「その中に入れるよ」的な働きをしてくれている（代入してくれている）
 
   @override
@@ -30,7 +36,8 @@ class _ThirdState extends State<Third> {
               children: [
                 Expanded(
                     flex: 1,
-                    child: _selectButton(_texts[0], ThirdPage(_texts[0]))),
+                    child: _selectButton(
+                        _texts[0], ThirdPage(_texts[0], _pageNumbers[0]))),
               ],
             ),
           ),
@@ -41,7 +48,8 @@ class _ThirdState extends State<Third> {
               children: [
                 Expanded(
                     flex: 1,
-                    child: _selectButton(_texts[1], ThirdPage(_texts[1]))),
+                    child: _selectButton(
+                        _texts[1], ThirdPage(_texts[1], _pageNumbers[1]))),
               ],
             ),
           ),
@@ -52,7 +60,8 @@ class _ThirdState extends State<Third> {
               children: [
                 Expanded(
                     flex: 1,
-                    child: _selectButton(_texts[2], ThirdPage(_texts[2]))),
+                    child: _selectButton(
+                        _texts[2], ThirdPage(_texts[2], _pageNumbers[2]))),
               ],
             ),
           ),
@@ -63,7 +72,8 @@ class _ThirdState extends State<Third> {
               children: [
                 Expanded(
                     flex: 1,
-                    child: _selectButton(_texts[3], ThirdPage(_texts[3]))),
+                    child: _selectButton(
+                        _texts[3], ThirdPage(_texts[3], _pageNumbers[3]))),
               ],
             ),
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'bottom_navigation_screen.dart';
 
 //このFirstPageに共通する部分は共通させて、変更したい部分は切り出す。そうすれば、共通して変更したい部分が出てきた時に一気に変更することができる。

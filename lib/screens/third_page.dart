@@ -1,61 +1,80 @@
 import 'package:flutter/material.dart';
-
 import 'bottom_navigation_screen.dart';
 
 class ThirdPage extends StatefulWidget {
-  ThirdPage(this.title);
+  ThirdPage(this.title, this.screenIndex);
   final String title;
+  final int screenIndex;
 
   @override
   _ThirdPageState createState() => _ThirdPageState();
 }
 
 class _ThirdPageState extends State<ThirdPage> {
-  int selectedIndex = 0;
-  List<Widget> widgetOptions = [
-    NavBottom(title: '1'),
-    NavBottom(title: '2'),
-    NavBottom(title: '3'),
-    NavBottom(title: '4'),
-    NavBottom(title: '5'),
-  ];
+  String title = '';
+  int screenIndex = 0;
 
-  void onItemTap(int index) {
+  @override
+  void initState() {
+    super.initState();
     setState(() {
-      selectedIndex = index;
+      title = widget.title;
+      screenIndex = widget.screenIndex;
     });
   }
+
+  int selectIndex = 0;
+  List<Widget> widgetOptions = [
+    NavBottom(key: UniqueKey(), title: '120mm × 140mm'),
+    NavBottom(key: UniqueKey(), title: '120mm × 141mm'),
+    NavBottom(key: UniqueKey(), title: '120mm × 142mm'),
+    NavBottom(key: UniqueKey(), title: '120mm × 143mm'),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: widgetOptions[selectedIndex],
+        child: widgetOptions[screenIndex],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.arrow_back),
-            label: '少し小さい',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.arrow_forward),
-            label: '少し大きい',
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: <Widget>[
+              FloatingActionButton.extended(
+                heroTag: ('smaller'),
+                backgroundColor: Colors.blueGrey.shade400,
+                foregroundColor: Colors.white,
+                onPressed: (screenIndex == 0)
+                    ? null
+                    : () {
+                        setState(() {
+                          screenIndex--;
+                        });
+                      },
+                icon: Icon(Icons.arrow_back),
+                label: Text('少し小さい'),
+              ),
+              Spacer(),
+              FloatingActionButton.extended(
+                heroTag: ('larger'),
+                backgroundColor: Colors.blueGrey.shade400,
+                foregroundColor: Colors.white,
+                onPressed: (screenIndex == 3)
+                    ? null
+                    : () {
+                        setState(() {
+                          screenIndex++;
+                        });
+                      },
+                icon: Icon(Icons.arrow_forward),
+                label: Text('少し大きい'),
+              )
+            ],
           ),
         ],
-        currentIndex: 0,
-        onTap: (index) {
-          setState(() {
-            if (index == 0) {
-              selectedIndex--;
-            } else {
-              selectedIndex++;
-            }
-          });
-        },
       ),
     );
   }

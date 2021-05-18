@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'bottom_navigation_screen.dart';
 
 class SecondPage extends StatefulWidget {
@@ -26,19 +25,15 @@ class _SecondPageState extends State<SecondPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(title: '1'),
-    NavBottom(title: '2'),
-    NavBottom(title: '3'),
-    NavBottom(title: '4'),
-    NavBottom(title: '5'),
+    NavBottom(key: UniqueKey(), title: '105mm × 125mm'),
+    NavBottom(key: UniqueKey(), title: '105mm × 126mm'),
+    NavBottom(key: UniqueKey(), title: '105mm × 127mm'),
+    NavBottom(key: UniqueKey(), title: '105mm × 128mm'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
       body: Center(
         child: widgetOptions[screenIndex],
       ),
@@ -57,15 +52,6 @@ class _SecondPageState extends State<SecondPage> {
                     : () {
                         setState(() {
                           screenIndex--;
-                          if (screenIndex == 0) {
-                            title = '105mm × 125mm';
-                          } else if (screenIndex == 1) {
-                            title = '105mm × 126mm';
-                          } else if (screenIndex == 2) {
-                            title = '105mm × 127mm';
-                          } else if (screenIndex == 3) {
-                            title = '105mm × 128mm';
-                          }
                         });
                       },
                 icon: Icon(Icons.arrow_back),
@@ -76,24 +62,13 @@ class _SecondPageState extends State<SecondPage> {
                 heroTag: ('larger'),
                 backgroundColor: Colors.blueGrey.shade400,
                 foregroundColor: Colors.white,
-                onPressed: () {
-                  setState(() {
-                    if (screenIndex == 3) {
-                      null;
-                    } else {
-                      screenIndex++;
-                    }
-                    if (screenIndex == 0) {
-                      title = '105mm × 125mm';
-                    } else if (screenIndex == 1) {
-                      title = '105mm × 126mm';
-                    } else if (screenIndex == 2) {
-                      title = '105mm × 127mm';
-                    } else if (screenIndex == 3) {
-                      title = '105mm × 128mm';
-                    }
-                  });
-                },
+                onPressed: (screenIndex == 3)
+                    ? null
+                    : () {
+                        setState(() {
+                          screenIndex++;
+                        });
+                      },
                 icon: Icon(Icons.arrow_forward),
                 label: Text('少し大きい'),
               )
