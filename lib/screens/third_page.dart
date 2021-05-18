@@ -43,34 +43,40 @@ class _ThirdPageState extends State<ThirdPage> {
         children: [
           Row(
             children: <Widget>[
-              FloatingActionButton.extended(
-                heroTag: ('smaller'),
-                backgroundColor: Colors.blueGrey.shade400,
-                foregroundColor: Colors.white,
-                onPressed: (screenIndex == 0)
-                    ? null
-                    : () {
-                        setState(() {
-                          screenIndex--;
-                        });
-                      },
-                icon: Icon(Icons.arrow_back),
-                label: Text('少し小さい'),
+              Container(
+                padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                child: FloatingActionButton.extended(
+                  heroTag: ('smaller'),
+                  backgroundColor: Colors.blueGrey.shade400,
+                  foregroundColor: Colors.white,
+                  onPressed: (screenIndex == 0)
+                      ? null
+                      : () {
+                          setState(() {
+                            screenIndex--;
+                          });
+                        },
+                  icon: Icon(Icons.arrow_back),
+                  label: Text('少し小さい'),
+                ),
               ),
               Spacer(),
-              FloatingActionButton.extended(
-                heroTag: ('larger'),
-                backgroundColor: Colors.blueGrey.shade400,
-                foregroundColor: Colors.white,
-                onPressed: (screenIndex == 3)
-                    ? null
-                    : () {
-                        setState(() {
-                          screenIndex++;
-                        });
-                      },
-                icon: Icon(Icons.arrow_forward),
-                label: Text('少し大きい'),
+              Container(
+                padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                child: FloatingActionButton.extended(
+                  heroTag: ('larger'),
+                  backgroundColor: Colors.blueGrey.shade400,
+                  foregroundColor: Colors.white,
+                  onPressed: (screenIndex == 3)
+                      ? null
+                      : () {
+                          setState(() {
+                            screenIndex++;
+                          });
+                        },
+                  icon: Icon(Icons.arrow_forward),
+                  label: Text('少し大きい'),
+                ),
               )
             ],
           ),
