@@ -33,10 +33,60 @@ class NavBottom extends StatefulWidget {
 class _NavBottomState extends State<NavBottom> {
   List<Mask> maskList = [
     Mask(
+      //マスク 使い捨て 50枚 ＋1枚 BFE99％ プレミアム品質 いつものマスク
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/71VYTG4cWcL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08WX32NN7',
-      size: "90mm × 111mm",
+          'https://images-na.ssl-images-amazon.com/images/I/6182ji60cnL._AC_UL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08ZMQX7DM',
+      size: "80mm × 125mm",
+    ),
+    Mask(
+      //エルモア 不織布マスク 子供用 30枚入
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/51zEkLhPWPL._AC_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08R7HX96Z',
+      size: "90mm × 125mm",
+    ),
+    Mask(
+      //マスク 子供用 50枚 柄豊富 カラー 使い捨て 高密度フィルター素材 三層構造不織布 キッズマスク 14*9cm 日本から発送 (ブルー系柄, 50枚)
+      imageUrl:
+          'https://m.media-amazon.com/images/I/61pERbcLTOL._AC_SL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08TWKPMC8',
+      size: "90mm × 140mm",
+    ),
+    Mask(
+      //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り マイメロディ 30枚 MSKP30-A
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/61ebvO5eUOL._AC_SL1100_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B07HYM7HTF',
+      size: "90mm × 145mm",
+    ),
+    Mask(
+      //スケーター 三層構造 不織布 マスク 子供 箱入り プラレール 30枚 MSKP30-A
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/71tfcUEcHoL._AC_SL1100_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B07HYLT3DB',
+      size: "90mm × 145mm",
+    ),
+    Mask(
+      //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り はらぺこあおむし 30枚 MSKP30-A
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/71SDrvNEZYL._AC_SL1100_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B07HYJFK24',
+      size: "90mm × 145mm",
+    ),
+    Mask(
+      //【全国マスク工業会正会員 個包装】3層不織布使い捨てマスク カケンPFE99%カット 女性子供サイズ 1箱50枚入【2020年9月から個包装・品質改良】
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/71JyXR4Rm9L._AC_UL1329_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08R3JYJDP',
+      size: "95mm × 140mm",
+    ),
+    Mask(
+      //【個包装 日本国内検品】マスク 小さめサイズ 50枚入 子供用 女性用 耳痛くならない 三層構造不織布 使い捨てマスク 白
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/71iejzXauIL._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08CNJXR99',
+      size: "95mm × 145mm",
     ),
     Mask(
       imageUrl:

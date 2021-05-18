@@ -27,10 +27,12 @@ class _FirstPageState extends State<FirstPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(key: UniqueKey(), title: '90mm × 111mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 112mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 113mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 114mm'),
+    NavBottom(key: UniqueKey(), title: '80mm × 125mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 125mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 140mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 145mm'),
+    NavBottom(key: UniqueKey(), title: '95mm × 140mm'),
+    NavBottom(key: UniqueKey(), title: '95mm × 145mm'),
   ];
 
   @override
@@ -69,7 +71,7 @@ class _FirstPageState extends State<FirstPage> {
                   heroTag: ('larger'),
                   backgroundColor: Colors.blueGrey.shade400,
                   foregroundColor: Colors.white,
-                  onPressed: (screenIndex == 3)
+                  onPressed: (screenIndex == 5)
                       ? null
                       : () {
                           setState(() {

@@ -9,10 +9,12 @@ class First extends StatefulWidget {
 
 class _FirstState extends State<First> {
   List<String> _texts = [
-    " 90mm × 111mm",
-    " 90mm × 112mm",
-    " 90mm × 113mm",
-    " 90mm × 114mm",
+    " 80mm × 125mm",
+    " 90mm × 125mm",
+    " 90mm × 140mm",
+    " 90mm × 145mm",
+    " 95mm × 140mm",
+    " 95mm × 145mm",
   ];
 
   List<int> _pageNumbers = [
@@ -20,6 +22,8 @@ class _FirstState extends State<First> {
     1,
     2,
     3,
+    4,
+    5,
   ];
   //　＝　は「その中に入れるよ」的な働きをしてくれている（代入してくれている）　＝は←みたいなイメージ
   //お絵描きメソッドであるbuildメソッドの中で変数（変わる値）を使う時には、＝　が必要になってくるよね
@@ -49,10 +53,10 @@ class _FirstState extends State<First> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
-                  flex: 1,
-                  child: _selectButton(
-                      _texts[1], FirstPage(_texts[1], _pageNumbers[1])),
-                )
+                    flex: 1,
+                    child: _selectButton(
+                        _texts[1], FirstPage(_texts[1], _pageNumbers[1]))),
+                //ここでやっていることはsellectButtonに(_texts[0], FirstPage(_texts[0])という引数（パラメータ）を持たせているということ？
               ],
             ),
           ),
@@ -78,6 +82,32 @@ class _FirstState extends State<First> {
                   flex: 1,
                   child: _selectButton(
                       _texts[3], FirstPage(_texts[3], _pageNumbers[3])),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(
+                      _texts[4], FirstPage(_texts[4], _pageNumbers[4])),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(
+                      _texts[5], FirstPage(_texts[5], _pageNumbers[5])),
                 )
               ],
             ),
