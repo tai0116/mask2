@@ -25,10 +25,11 @@ class _SecondPageState extends State<SecondPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(key: UniqueKey(), title: '105mm × 125mm'),
-    NavBottom(key: UniqueKey(), title: '105mm × 126mm'),
-    NavBottom(key: UniqueKey(), title: '105mm × 127mm'),
-    NavBottom(key: UniqueKey(), title: '105mm × 128mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 145mm'),
+    NavBottom(key: UniqueKey(), title: '95mm × 145mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 150mm'),
+    NavBottom(key: UniqueKey(), title: '95mm × 150mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 160mm'),
   ];
 
   @override
@@ -67,7 +68,7 @@ class _SecondPageState extends State<SecondPage> {
                   heroTag: ('larger'),
                   backgroundColor: Colors.blueGrey.shade400,
                   foregroundColor: Colors.white,
-                  onPressed: (screenIndex == 3)
+                  onPressed: (screenIndex == 4)
                       ? null
                       : () {
                           setState(() {

@@ -10,6 +10,7 @@ class First extends StatefulWidget {
 class _FirstState extends State<First> {
   List<String> _texts = [
     " 80mm × 125mm",
+    " 85mm × 125mm",
     " 90mm × 125mm",
     " 90mm × 140mm",
     " 90mm × 145mm",
@@ -24,6 +25,7 @@ class _FirstState extends State<First> {
     3,
     4,
     5,
+    6,
   ];
   //　＝　は「その中に入れるよ」的な働きをしてくれている（代入してくれている）　＝は←みたいなイメージ
   //お絵描きメソッドであるbuildメソッドの中で変数（変わる値）を使う時には、＝　が必要になってくるよね
@@ -108,6 +110,19 @@ class _FirstState extends State<First> {
                   flex: 1,
                   child: _selectButton(
                       _texts[5], FirstPage(_texts[5], _pageNumbers[5])),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(
+                      _texts[6], FirstPage(_texts[6], _pageNumbers[6])),
                 )
               ],
             ),

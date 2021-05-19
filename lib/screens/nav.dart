@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
-import 'search_screen.dart';
+import '../search/search_screen.dart';
 
 class Nav extends StatefulWidget {
   @override

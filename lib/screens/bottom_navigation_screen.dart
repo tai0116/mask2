@@ -40,6 +40,13 @@ class _NavBottomState extends State<NavBottom> {
       size: "80mm × 125mm",
     ),
     Mask(
+      //医食同源 立体型不織布マスク キッズ 50枚
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/6160eRfyxcL._AC_SL1218_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRLYTZ',
+      size: "85mm × 125mm",
+    ),
+    Mask(
       //エルモア 不織布マスク 子供用 30枚入
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51zEkLhPWPL._AC_.jpg',
@@ -88,47 +95,48 @@ class _NavBottomState extends State<NavBottom> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08CNJXR99',
       size: "95mm × 145mm",
     ),
+    ////////////
     Mask(
+      //マスク 個包装 30枚 小さめサイズ 145mm 使い捨て 立体型マスク 不織布マスク ほこり 花粉対策 飛沫防止 (1)
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/61aK43kYWEL._AC_SL1220_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B014IDNT3E',
-      size: "90mm × 111mm",
+          'https://images-na.ssl-images-amazon.com/images/I/61PPqKAgPPL._AC_SL1001_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08KXT3GYS',
+      size: "90mm × 145mm",
     ),
     Mask(
+      //医食同源 立体型不織布マスク 小さめ 50枚
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/614lmM2oUbL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08CF2TL9N',
-      size: "90mm × 111mm",
+          'https://images-na.ssl-images-amazon.com/images/I/61V3jCHsqsL._AC_SL1218_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KG',
+      size: "95mm × 145mm",
     ),
     Mask(
+      //ピップ プリーツガード 呼吸快適マスク 30枚入 小さめ 個別包装
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/61EFJqodmbL._AC_SL1000_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B00EVGE28U',
-      size: "90mm × 111mm",
+          'https://m.media-amazon.com/images/I/71dDVS5etiL._AC_SL1357_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08PYPDNTF',
+      size: "95mm × 145mm",
     ),
     Mask(
+      //【日本国内検品 広耳】マスク 小さめ PFE BFE VFE 99%以上 200枚入 個包装 子供用 女性用 こども用 耳が痛くならない 不織布 使い捨てマスク 飛沫防止99% PM2.5 風邪予防 防塵 花粉対策
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/71VYTG4cWcL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08WX32NN7',
-      size: "90mm × 112mm",
+          'https://images-na.ssl-images-amazon.com/images/I/71tVffyPS9L._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08MPXHLVV',
+      size: "90mm × 150mm",
     ),
     Mask(
+      //ナノAG+AIRマスク (小さめサイズ 50枚入)
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/61aK43kYWEL._AC_SL1220_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B014IDNT3E',
-      size: "90mm × 112mm",
+          'https://images-na.ssl-images-amazon.com/images/I/61hk4DF1O8L._AC_UL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08PXNCLDP',
+      size: "95mm × 150mm",
     ),
     Mask(
+      //大人用マスク 50枚入り 春夏シリーズ 不織布マスク 花粉 防塵 使い捨てマスク 風邪 pm2.5 ウィルス ホコリ 3層フィルター カラーマスク(新緑50枚, 女性用サイズ16*9㎝)
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/614lmM2oUbL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08CF2TL9N',
-      size: "90mm × 112mm",
-    ),
-    Mask(
-      imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/61EFJqodmbL._AC_SL1000_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B00EVGE28U',
-      size: "90mm × 112mm",
+          'https://images-na.ssl-images-amazon.com/images/I/51Q40Zb0qIL._AC_SL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
+      size: "90mm × 160mm",
     ),
   ];
 

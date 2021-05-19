@@ -9,10 +9,11 @@ class Second extends StatefulWidget {
 
 class _SecondState extends State<Second> {
   List<String> _texts = [
-    " 105mm × 125mm",
-    " 105mm × 126mm",
-    " 105mm × 127mm",
-    " 105mm × 128mm",
+    " 90mm × 145mm",
+    " 95mm × 145mm",
+    " 90mm × 150mm",
+    " 95mm × 150mm",
+    " 90mm × 160mm",
   ];
 
   List<int> _pageNumbers = [
@@ -20,6 +21,7 @@ class _SecondState extends State<Second> {
     1,
     2,
     3,
+    4,
   ];
 
   @override
@@ -73,6 +75,19 @@ class _SecondState extends State<Second> {
                   flex: 1,
                   child: _selectButton(
                       _texts[3], SecondPage(_texts[3], _pageNumbers[3])),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: _selectButton(
+                      _texts[4], SecondPage(_texts[4], _pageNumbers[4])),
                 )
               ],
             ),
