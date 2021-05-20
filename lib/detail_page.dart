@@ -24,15 +24,12 @@ class Mask {
   }
 }
 
-class NavBottom extends StatefulWidget {
-  NavBottom({Key? key, required this.title}) : super(key: key);
-  final String title;
-
+class MaskDetail extends StatefulWidget {
   @override
-  _NavBottomState createState() => _NavBottomState();
+  _MaskDetailState createState() => _MaskDetailState();
 }
 
-class _NavBottomState extends State<NavBottom> {
+class _MaskDetailState extends State<MaskDetail> {
   List<Mask> maskList = [
     Mask(
       //マスク 使い捨て 50枚 ＋1枚 BFE99％ プレミアム品質 いつものマスク
@@ -214,8 +211,8 @@ class _NavBottomState extends State<NavBottom> {
     super.initState();
 
     // ここで絞り込み処理を書く
-    maskListWithSize =
-        maskList.where((mask) => mask.size == widget.title).toList();
+    // maskListWithSize =
+    //   maskList.where((mask) => mask.size == widget.).toList();
     setState(() {});
     print(maskListWithSize.length);
   }
@@ -223,9 +220,6 @@ class _NavBottomState extends State<NavBottom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Container(
         width: double.infinity,
         child: GridView.count(
@@ -246,24 +240,20 @@ class _NavBottomState extends State<NavBottom> {
                   Expanded(
                     child: Image.network(maskListWithSize[index].imageUrl),
                   ),
-                  SizedBox(
-                    width: 330,
-                    height: 40,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.black),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.brown.shade100),
-                      ),
-                      child: Text(
-                        'この商品の詳細をAmazonで確認する',
-                        style: TextStyle(fontSize: 15.0),
-                      ),
-                      onPressed: () {
-                        maskListWithSize[index].launchURL();
-                      },
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.brown.shade100),
                     ),
+                    child: Text(
+                      'この商品の詳細をAmazonで確認する',
+                      style: TextStyle(fontSize: 15.0),
+                    ),
+                    onPressed: () {
+                      maskListWithSize[index].launchURL();
+                    },
                   ),
                 ],
               ),
