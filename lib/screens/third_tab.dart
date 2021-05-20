@@ -88,7 +88,8 @@ class _ThirdState extends State<Third> {
       child: ElevatedButton(
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.white30),
+          backgroundColor:
+              MaterialStateProperty.all<Color>(Colors.brown.shade100),
         ),
         child: Text(
           buttonText,
