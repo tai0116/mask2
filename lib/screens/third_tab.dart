@@ -9,10 +9,10 @@ class Third extends StatefulWidget {
 
 class _ThirdState extends State<Third> {
   List<String> _texts = [
-    "120mm × 140mm",
-    "120mm × 141mm",
-    "120mm × 142mm",
-    "120mm × 143mm",
+    "90mm × 165mm",
+    "90mm × 175mm",
+    "95mm × 173mm",
+    "95mm × 175mm",
   ];
 
   List<int> _pageNumbers = [
