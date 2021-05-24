@@ -94,6 +94,8 @@ class _SearchState extends State<Search> {
     _selectMakerController.dispose();
   }
 
+  late String text;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +107,9 @@ class _SearchState extends State<Search> {
               child: Text('メーカーを入力してください', style: TextStyle(fontSize: 12.0)),
             ),
             TextField(
+              onSubmitted: (context) {
+                text = context;
+              },
               onChanged: (text) {
                 visibleMakers =
                     makers.where((maker) => maker.contains(text)).toList();
@@ -153,28 +158,28 @@ class _SearchState extends State<Search> {
                 width: 360,
                 height: 50,
                 child: ElevatedButton(
-                  style: ButtonStyle(
-                    foregroundColor:
-                        MaterialStateProperty.all<Color>(Colors.black),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.brown.shade100),
-                  ),
-                  child: Text('検索'),
-                  onPressed: () {
-                    // 変数の変化をリアルタイムに通知する
-                    //setState(
-                    // () {
-                    // 何かしらの入力があるときだけ実行
-                    // if (_selectMakerController.text.length > 0) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => MaskDetail()),
-                    );
-                    //}
-                  },
-                  // );
-                  //},
-                ),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.black),
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.brown.shade100),
+                    ),
+                    child: Text('検索'),
+                    onPressed: () {
+                      // 変数の変化をリアルタイムに通知する
+                      setState(() {
+                        //何かしらの入力があるときだけ実行
+                        //if (_selectMakerController.text.length > 0) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MaskDetail(text),
+                            ));
+                        //}
+                      });
+                      // );
+                      //},
+                    }),
               ),
             ),
           ],

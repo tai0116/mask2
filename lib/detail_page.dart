@@ -25,6 +25,9 @@ class Mask {
 }
 
 class MaskDetail extends StatefulWidget {
+  MaskDetail(this.detail);
+  final String detail;
+
   @override
   _MaskDetailState createState() => _MaskDetailState();
 }
@@ -37,7 +40,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/6182ji60cnL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08ZMQX7DM',
       size: "80mm × 125mm",
-      detail: "メーカー：",
+      detail: "スケーター",
     ),
     Mask(
       //医食同源 立体型不織布マスク キッズ 50枚
@@ -45,7 +48,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/6160eRfyxcL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRLYTZ',
       size: "85mm × 125mm",
-      detail: "",
+      detail: "スケーター",
     ),
     Mask(
       //エルモア 不織布マスク 子供用 30枚入
@@ -53,7 +56,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/51zEkLhPWPL._AC_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R7HX96Z',
       size: "90mm × 125mm",
-      detail: "",
+      detail: "スケーター",
     ),
     Mask(
       //マスク 子供用 50枚 柄豊富 カラー 使い捨て 高密度フィルター素材 三層構造不織布 キッズマスク 14*9cm 日本から発送 (ブルー系柄, 50枚)
@@ -210,9 +213,12 @@ class _MaskDetailState extends State<MaskDetail> {
     // TODO: implement initState
     super.initState();
 
+    //maskListが走って、initStateで描画される。そして、その後ここで絞り込み処理を書いて、実際に描画するマスクを絞りこむ
+
     // ここで絞り込み処理を書く
-    // maskListWithSize =
-    //   maskList.where((mask) => mask.size == widget.).toList();
+    maskListWithSize =
+        maskList.where((mask) => mask.detail == widget.detail).toList();
+
     setState(() {});
     print(maskListWithSize.length);
   }
