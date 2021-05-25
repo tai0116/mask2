@@ -70,11 +70,6 @@ class _SearchState extends State<Search> {
   ];
   late List<String> visibleMakers;
 
-  @override
-  void initState() {
-    visibleMakers = makers;
-  }
-
   // todoの一覧リスト変数を用意
   //List<String> makerList = [];
 
@@ -83,10 +78,11 @@ class _SearchState extends State<Search> {
   late TextEditingController _selectMakerController;
 
   // コントローラーの初期化
-  //void initState() {
-  //super.initState();
-  //_selectMakerController = TextEditingController();
-  //}
+  void initState() {
+    visibleMakers = makers;
+    super.initState();
+    _selectMakerController = TextEditingController();
+  }
 
   // statefulオブジェクトが削除されるときに、参照を削除してくれる
   void dispose() {
@@ -107,6 +103,7 @@ class _SearchState extends State<Search> {
               child: Text('メーカーを入力してください', style: TextStyle(fontSize: 12.0)),
             ),
             TextField(
+              controller: _selectMakerController,
               onSubmitted: (context) {
                 text = context;
               },
@@ -125,7 +122,11 @@ class _SearchState extends State<Search> {
                 hintText: "検索",
                 suffixIcon: IconButton(
                   icon: Icon(Icons.clear),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      this._selectMakerController.clear();
+                    });
+                  },
                 ),
               ),
 
@@ -152,6 +153,9 @@ class _SearchState extends State<Search> {
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(visibleMakers[index]),
+                    //onTap: () {
+                    //(context, index);
+                    //  },
                   );
                 },
                 itemCount: visibleMakers.length,
