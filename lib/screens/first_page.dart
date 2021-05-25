@@ -61,8 +61,15 @@ class _FirstPageState extends State<FirstPage> {
                             screenIndex--;
                           });
                         },
-                  icon: Icon(Icons.arrow_back),
-                  label: Text('少し小さい'),
+                  label: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Icon(Icons.arrow_back),
+                      ),
+                      Text('少し小さい')
+                    ],
+                  ),
                 ),
               ),
               Spacer(),
@@ -79,8 +86,15 @@ class _FirstPageState extends State<FirstPage> {
                             screenIndex++;
                           });
                         },
-                  icon: Icon(Icons.arrow_forward),
-                  label: Text('少し大きい'),
+                  label: Row(
+                    children: [
+                      Text('少し大きい'),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Icon(Icons.arrow_forward),
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

@@ -226,6 +226,9 @@ class _MaskDetailState extends State<MaskDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('MaskME'),
+      ),
       body: Container(
         width: double.infinity,
         child: GridView.count(

@@ -123,12 +123,18 @@ class _SearchState extends State<Search> {
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
                 hintText: "検索",
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.clear),
+                  onPressed: () {},
+                ),
               ),
+
               autofocus: true,
               keyboardType: TextInputType.text,
               style: TextStyle(fontSize: 20.0),
               //controller: null,
             ),
+
             //Container(
             //padding: EdgeInsets.all(16.0),
             //child: Column(
