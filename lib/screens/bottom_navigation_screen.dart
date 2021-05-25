@@ -246,23 +246,26 @@ class _NavBottomState extends State<NavBottom> {
                   Expanded(
                     child: Image.network(maskListWithSize[index].imageUrl),
                   ),
-                  SizedBox(
-                    width: 330,
-                    height: 40,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all<Color>(Colors.black),
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Colors.brown.shade100),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0, bottom: 85.0),
+                    child: SizedBox(
+                      width: 330,
+                      height: 40,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.black),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Colors.brown.shade100),
+                        ),
+                        child: Text(
+                          'この商品の詳細をAmazonで確認する',
+                          style: TextStyle(fontSize: 15.0),
+                        ),
+                        onPressed: () {
+                          maskListWithSize[index].launchURL();
+                        },
                       ),
-                      child: Text(
-                        'この商品の詳細をAmazonで確認する',
-                        style: TextStyle(fontSize: 15.0),
-                      ),
-                      onPressed: () {
-                        maskListWithSize[index].launchURL();
-                      },
                     ),
                   ),
                 ],
