@@ -112,11 +112,6 @@ class _SearchState extends State<Search> {
                     makers.where((maker) => maker.contains(text)).toList();
                 setState(() {});
               },
-
-              // onChangedは入力されている文字が変更するたびに呼ばれます
-              // model.text = text;
-              //model.search();
-              //},
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
                 hintText: "検索",
@@ -151,11 +146,19 @@ class _SearchState extends State<Search> {
               flex: 2,
               child: ListView.builder(
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(visibleMakers[index]),
-                    //onTap: () {
-                    //(context, index);
-                    //  },
+                  return Card(
+                    child: ListTile(
+                      title: Text(visibleMakers[index]),
+                      onTap: () {
+                        setState(() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MaskDetail(text),
+                              ));
+                        });
+                      },
+                    ),
                   );
                 },
                 itemCount: visibleMakers.length,
@@ -163,7 +166,7 @@ class _SearchState extends State<Search> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                  top: 16.0, right: 0.0, bottom: 30.0, left: 0.0),
+                  top: 16.0, right: 0.0, bottom: 0.0, left: 0.0),
               child: SizedBox(
                 width: 360,
                 height: 50,

@@ -40,7 +40,7 @@ class _NavBottomState extends State<NavBottom> {
           'https://images-na.ssl-images-amazon.com/images/I/6182ji60cnL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08ZMQX7DM',
       size: "80mm × 125mm",
-      detail: "メーカー：",
+      detail: "",
     ),
     Mask(
       //医食同源 立体型不織布マスク キッズ 50枚

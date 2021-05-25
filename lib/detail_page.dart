@@ -64,7 +64,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://m.media-amazon.com/images/I/61pERbcLTOL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08TWKPMC8',
       size: "90mm × 140mm",
-      detail: "",
+      detail: "ピュアスマイル",
     ),
     Mask(
       //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り マイメロディ 30枚 MSKP30-A
@@ -72,7 +72,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61ebvO5eUOL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYM7HTF',
       size: "90mm × 145mm",
-      detail: "",
+      detail: "ピュアスマイル",
     ),
     Mask(
       //スケーター 三層構造 不織布 マスク 子供 箱入り プラレール 30枚 MSKP30-A
