@@ -27,13 +27,13 @@ class _FirstPageState extends State<FirstPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(key: UniqueKey(), title: '80mm × 125mm'),
-    NavBottom(key: UniqueKey(), title: '85mm × 125mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 125mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 140mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 145mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 140mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 145mm'),
+    NavBottom(key: UniqueKey(), title: '80mm × 125mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '85mm × 125mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '90mm × 125mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '90mm × 140mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '90mm × 145mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '95mm × 140mm', target: 'こども'),
+    NavBottom(key: UniqueKey(), title: '95mm × 145mm', target: 'こども'),
   ];
 
   @override

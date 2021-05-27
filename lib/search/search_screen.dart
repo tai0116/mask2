@@ -68,20 +68,19 @@ class _SearchState extends State<Search> {
     'ファイン',
     'サンスマイル sun smile',
   ];
-  late List<String> visibleMakers;
+  List<String> visibleMakers = [];
 
   // todoの一覧リスト変数を用意
   //List<String> makerList = [];
 
   // テキストフィールドのコントローラー設定
   // コントローラーの宣言
-  late TextEditingController _selectMakerController;
+  final TextEditingController _selectMakerController = TextEditingController();
 
   // コントローラーの初期化
   void initState() {
     visibleMakers = makers;
     super.initState();
-    _selectMakerController = TextEditingController();
   }
 
   // statefulオブジェクトが削除されるときに、参照を削除してくれる
@@ -89,8 +88,6 @@ class _SearchState extends State<Search> {
     super.dispose();
     _selectMakerController.dispose();
   }
-
-  late String text;
 
   @override
   Widget build(BuildContext context) {
@@ -104,9 +101,7 @@ class _SearchState extends State<Search> {
             ),
             TextField(
               controller: _selectMakerController,
-              onSubmitted: (context) {
-                text = context;
-              },
+
               onChanged: (text) {
                 visibleMakers =
                     makers.where((maker) => maker.contains(text)).toList();
@@ -154,7 +149,8 @@ class _SearchState extends State<Search> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => MaskDetail(text),
+                                builder: (context) =>
+                                    MaskDetail(visibleMakers[index]),
                               ));
                         });
                       },
@@ -186,7 +182,8 @@ class _SearchState extends State<Search> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MaskDetail(text),
+                              builder: (context) =>
+                                  MaskDetail(_selectMakerController.text),
                             ));
                         //}
                       });

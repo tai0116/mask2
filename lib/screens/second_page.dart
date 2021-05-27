@@ -25,11 +25,11 @@ class _SecondPageState extends State<SecondPage> {
 
   int selectedIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(key: UniqueKey(), title: '90mm × 145mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 145mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 150mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 150mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 160mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 145mm', target: '小さい'),
+    NavBottom(key: UniqueKey(), title: '95mm × 145mm', target: '小さい'),
+    NavBottom(key: UniqueKey(), title: '90mm × 150mm', target: '小さい'),
+    NavBottom(key: UniqueKey(), title: '95mm × 150mm', target: '小さい'),
+    NavBottom(key: UniqueKey(), title: '90mm × 160mm', target: '小さい'),
   ];
 
   @override

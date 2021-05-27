@@ -25,10 +25,10 @@ class _ThirdPageState extends State<ThirdPage> {
 
   int selectIndex = 0;
   List<Widget> widgetOptions = [
-    NavBottom(key: UniqueKey(), title: '90mm × 165mm'),
-    NavBottom(key: UniqueKey(), title: '90mm × 175mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 173mm'),
-    NavBottom(key: UniqueKey(), title: '95mm × 175mm'),
+    NavBottom(key: UniqueKey(), title: '90mm × 165mm', target: 'ふつう'),
+    NavBottom(key: UniqueKey(), title: '90mm × 175mm', target: 'ふつう'),
+    NavBottom(key: UniqueKey(), title: '95mm × 173mm', target: 'ふつう'),
+    NavBottom(key: UniqueKey(), title: '95mm × 175mm', target: 'ふつう'),
   ];
 
   @override

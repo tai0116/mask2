@@ -1,28 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Mask {
-  Mask({
-    required this.amazonUrl,
-    required this.imageUrl,
-    required this.size,
-    required this.detail,
-  });
-  final String amazonUrl;
-  final String imageUrl;
-  final String size;
-  final String detail;
-
-  /// 関数ももたせられるよ
-  /// この関数を呼べばamazonUrlで指定されたサイトが開く
-  Future<void> launchURL() async {
-    if (await canLaunch(amazonUrl)) {
-      await launch(amazonUrl);
-    } else {
-      throw 'Could not launch $amazonUrl';
-    }
-  }
-}
+import 'screens/bottom_navigation_screen.dart';
 
 class MaskDetail extends StatefulWidget {
   MaskDetail(this.detail);
@@ -41,6 +20,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08ZMQX7DM',
       size: "80mm × 125mm",
       detail: "スケーター",
+      target: "こども",
     ),
     Mask(
       //医食同源 立体型不織布マスク キッズ 50枚
@@ -49,6 +29,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRLYTZ',
       size: "85mm × 125mm",
       detail: "スケーター",
+      target: "こども",
     ),
     Mask(
       //エルモア 不織布マスク 子供用 30枚入
@@ -57,6 +38,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R7HX96Z',
       size: "90mm × 125mm",
       detail: "スケーター",
+      target: "こども",
     ),
     Mask(
       //マスク 子供用 50枚 柄豊富 カラー 使い捨て 高密度フィルター素材 三層構造不織布 キッズマスク 14*9cm 日本から発送 (ブルー系柄, 50枚)
@@ -65,6 +47,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08TWKPMC8',
       size: "90mm × 140mm",
       detail: "ピュアスマイル",
+      target: "こども",
     ),
     Mask(
       //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り マイメロディ 30枚 MSKP30-A
@@ -73,6 +56,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYM7HTF',
       size: "90mm × 145mm",
       detail: "ピュアスマイル",
+      target: "こども",
     ),
     Mask(
       //スケーター 三層構造 不織布 マスク 子供 箱入り プラレール 30枚 MSKP30-A
@@ -81,6 +65,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYLT3DB',
       size: "90mm × 145mm",
       detail: "",
+      target: "こども",
     ),
     Mask(
       //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り はらぺこあおむし 30枚 MSKP30-A
@@ -89,6 +74,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYJFK24',
       size: "90mm × 145mm",
       detail: "",
+      target: "こども",
     ),
     Mask(
       //【全国マスク工業会正会員 個包装】3層不織布使い捨てマスク カケンPFE99%カット 女性子供サイズ 1箱50枚入【2020年9月から個包装・品質改良】
@@ -97,6 +83,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R3JYJDP',
       size: "95mm × 140mm",
       detail: "",
+      target: "こども",
     ),
     Mask(
       //【個包装 日本国内検品】マスク 小さめサイズ 50枚入 子供用 女性用 耳痛くならない 三層構造不織布 使い捨てマスク 白
@@ -105,6 +92,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08CNJXR99',
       size: "95mm × 145mm",
       detail: "",
+      target: "こども",
     ),
     ////////////
     Mask(
@@ -114,6 +102,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08KXT3GYS',
       size: "90mm × 145mm",
       detail: "",
+      target: "小さい",
     ),
     Mask(
       //医食同源 立体型不織布マスク 小さめ 50枚
@@ -122,6 +111,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KG',
       size: "95mm × 145mm",
       detail: "",
+      target: "小さい",
     ),
     Mask(
       //ピップ プリーツガード 呼吸快適マスク 30枚入 小さめ 個別包装
@@ -130,6 +120,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PYPDNTF',
       size: "95mm × 145mm",
       detail: "",
+      target: "小さい",
     ),
     Mask(
       //【日本国内検品 広耳】マスク 小さめ PFE BFE VFE 99%以上 200枚入 個包装 子供用 女性用 こども用 耳が痛くならない 不織布 使い捨てマスク 飛沫防止99% PM2.5 風邪予防 防塵 花粉対策
@@ -138,6 +129,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MPXHLVV',
       size: "90mm × 150mm",
       detail: "",
+      target: "小さい",
     ),
     Mask(
       //ナノAG+AIRマスク (小さめサイズ 50枚入)
@@ -146,6 +138,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PXNCLDP',
       size: "95mm × 150mm",
       detail: "",
+      target: "小さい",
     ),
     Mask(
       //大人用マスク 50枚入り 春夏シリーズ 不織布マスク 花粉 防塵 使い捨てマスク 風邪 pm2.5 ウィルス ホコリ 3層フィルター カラーマスク(新緑50枚, 女性用サイズ16*9㎝)
@@ -154,6 +147,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
       size: "90mm × 160mm",
       detail: "",
+      target: "小さい",
     ),
     ////////////
     Mask(
@@ -163,6 +157,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B0141ZPADQ',
       size: "90mm × 165mm",
       detail: "",
+      target: "",
     ),
     Mask(
       //[Amazon限定ブランド] NAGAHIRO マスク 日本製 ウィルス 飛沫 微粒子 花粉99%カット 高性能フィルター採用 SEK認証 抗菌 防臭 「全国マスク工業会会員」 平ゴム 耳に優しい 不織布 マスク 普通サイズホワイト 7枚入り 4セット（28枚)
@@ -171,6 +166,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B093G94DQQ',
       size: "90mm × 175mm",
       detail: "",
+      target: "",
     ),
     Mask(
       //大王製紙 エリエール ハイパーブロックマスク ウイルスブロック ふつうサイズ 50枚入（日本製）
@@ -179,6 +175,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08W2JX5XY',
       size: "90mm × 175mm",
       detail: "",
+      target: "",
     ),
     Mask(
       //GOJAPAN マスク 210枚入 (7枚×30袋) 1袋1週間分 BFE VFE PFE 99%カットフィルター採用 4層構造 ふつうサイズ 呼吸しやすい
@@ -187,6 +184,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MQGYVG4',
       size: "95mm × 173mm",
       detail: "",
+      target: "",
     ),
     Mask(
       //医食同源 立体型不織布マスク ふつう 50枚
@@ -195,6 +193,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KH',
       size: "95mm × 175mm",
       detail: "",
+      target: "",
     ),
     Mask(
       //Coolth Style 日本製 不織布マスク 個包装 50枚 使い捨てマスク 【日本国内カケンテスト認証済】高機能 日本製マスク 普通サイズ：175㎜×95㎜ (不織布マスク)
@@ -203,6 +202,7 @@ class _MaskDetailState extends State<MaskDetail> {
       amazonUrl: 'https://www.amazon.co.jp/dp/B08WRXXB4P',
       size: "95mm × 175mm",
       detail: "",
+      target: "",
     ),
   ];
 
