@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'screens/bottom_navigation_screen.dart';
 
 class MaskDetail extends StatefulWidget {
-  MaskDetail(this.detail);
-  final String detail;
+  MaskDetail(this.maker);
+  final String maker;
 
   @override
   _MaskDetailState createState() => _MaskDetailState();
@@ -14,21 +13,13 @@ class MaskDetail extends StatefulWidget {
 class _MaskDetailState extends State<MaskDetail> {
   List<Mask> maskList = [
     Mask(
-      //マスク 使い捨て 50枚 ＋1枚 BFE99％ プレミアム品質 いつものマスク
-      imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/6182ji60cnL._AC_UL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08ZMQX7DM',
-      size: "80mm × 125mm",
-      detail: "スケーター",
-      target: "こども",
-    ),
-    Mask(
       //医食同源 立体型不織布マスク キッズ 50枚
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/6160eRfyxcL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRLYTZ',
       size: "85mm × 125mm",
-      detail: "スケーター",
+      maker: "医食同源",
+      detail: "",
       target: "こども",
     ),
     Mask(
@@ -37,7 +28,8 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/51zEkLhPWPL._AC_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R7HX96Z',
       size: "90mm × 125mm",
-      detail: "スケーター",
+      maker: "エルモア",
+      detail: "",
       target: "こども",
     ),
     Mask(
@@ -46,7 +38,8 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://m.media-amazon.com/images/I/61pERbcLTOL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08TWKPMC8',
       size: "90mm × 140mm",
-      detail: "ピュアスマイル",
+      maker: "",
+      detail: "",
       target: "こども",
     ),
     Mask(
@@ -55,7 +48,8 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61ebvO5eUOL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYM7HTF',
       size: "90mm × 145mm",
-      detail: "ピュアスマイル",
+      maker: "スケーター",
+      detail: "",
       target: "こども",
     ),
     Mask(
@@ -64,6 +58,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71tfcUEcHoL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYLT3DB',
       size: "90mm × 145mm",
+      maker: "スケーター",
       detail: "",
       target: "こども",
     ),
@@ -73,6 +68,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71SDrvNEZYL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYJFK24',
       size: "90mm × 145mm",
+      maker: "",
       detail: "",
       target: "こども",
     ),
@@ -82,6 +78,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71JyXR4Rm9L._AC_UL1329_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R3JYJDP',
       size: "95mm × 140mm",
+      maker: "",
       detail: "",
       target: "こども",
     ),
@@ -91,6 +88,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71iejzXauIL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08CNJXR99',
       size: "95mm × 145mm",
+      maker: "",
       detail: "",
       target: "こども",
     ),
@@ -101,6 +99,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61PPqKAgPPL._AC_SL1001_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08KXT3GYS',
       size: "90mm × 145mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -110,6 +109,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61V3jCHsqsL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KG',
       size: "95mm × 145mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -119,6 +119,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://m.media-amazon.com/images/I/71dDVS5etiL._AC_SL1357_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PYPDNTF',
       size: "95mm × 145mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -128,6 +129,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71tVffyPS9L._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MPXHLVV',
       size: "90mm × 150mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -137,6 +139,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61hk4DF1O8L._AC_UL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PXNCLDP',
       size: "95mm × 150mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -146,6 +149,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/51Q40Zb0qIL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
       size: "90mm × 160mm",
+      maker: "",
       detail: "",
       target: "小さい",
     ),
@@ -156,6 +160,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/616ZDqygl6L._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B0141ZPADQ',
       size: "90mm × 165mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -165,6 +170,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/61TD7PJ9GUS._AC_SL1012_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093G94DQQ',
       size: "90mm × 175mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -174,6 +180,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/81UdjYQp4AL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08W2JX5XY',
       size: "90mm × 175mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -183,6 +190,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/910YXdXgIkL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MQGYVG4',
       size: "95mm × 173mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -192,6 +200,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/71UHQKS9C6L._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KH',
       size: "95mm × 175mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -201,6 +210,7 @@ class _MaskDetailState extends State<MaskDetail> {
           'https://images-na.ssl-images-amazon.com/images/I/81uz1uSNIvL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08WRXXB4P',
       size: "95mm × 175mm",
+      maker: "",
       detail: "",
       target: "",
     ),
@@ -217,7 +227,7 @@ class _MaskDetailState extends State<MaskDetail> {
 
     // ここで絞り込み処理を書く
     maskListWithSize =
-        maskList.where((mask) => mask.detail == widget.detail).toList();
+        maskList.where((mask) => mask.maker == widget.maker).toList();
 
     setState(() {});
     print(maskListWithSize.length);
@@ -244,27 +254,30 @@ class _MaskDetailState extends State<MaskDetail> {
                       );
                     });
               },
-              child: Column(
-                children: [
-                  Expanded(
-                    child: Image.network(maskListWithSize[index].imageUrl),
-                  ),
-                  ElevatedButton(
-                    style: ButtonStyle(
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.black),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          Colors.brown.shade100),
+              child: Container(
+                padding: EdgeInsets.only(top: 20.0, left: 24.0, right: 24.0),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Image.network(maskListWithSize[index].imageUrl),
                     ),
-                    child: Text(
-                      'この商品の詳細をAmazonで確認する',
-                      style: TextStyle(fontSize: 15.0),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.black),
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.brown.shade100),
+                      ),
+                      child: Text(
+                        'この商品の詳細をAmazonで確認する',
+                        style: TextStyle(fontSize: 15.0),
+                      ),
+                      onPressed: () {
+                        maskListWithSize[index].launchURL();
+                      },
                     ),
-                    onPressed: () {
-                      maskListWithSize[index].launchURL();
-                    },
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           }),
