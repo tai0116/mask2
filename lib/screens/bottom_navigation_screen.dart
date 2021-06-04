@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -207,13 +206,13 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //マスク 個包装 30枚 小さめサイズ 145mm 使い捨て 立体型マスク 不織布マスク ほこり 花粉対策 飛沫防止 (1)
+      //マスク 個包装 30枚 小さめサイズ 145mm 使い捨て 立体型マスク 不織布マスク ほこり 花粉対策 飛沫防止 (1)　2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61PPqKAgPPL._AC_SL1001_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08KXT3GYS',
       size: "90mm × 145mm",
-      maker: "",
-      detail: "",
+      maker: "TERUKA",
+      detail: "部立体感アップ。口紅が付きにくい。呼吸がより快適",
       target: "小さい",
     ),
     Mask(
@@ -222,48 +221,52 @@ class _NavBottomState extends State<NavBottom> {
           'https://images-na.ssl-images-amazon.com/images/I/61V3jCHsqsL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KG',
       size: "95mm × 145mm",
-      maker: "",
-      detail: "",
+      maker: "医食同源",
+      detail: "【ノーズフィット】マスクの密着性を高め、メガネのくもりを軽減",
       target: "小さい",
     ),
     Mask(
-      //ピップ プリーツガード 呼吸快適マスク 30枚入 小さめ 個別包装
+      //ピップ プリーツガード 呼吸快適マスク 30枚入 小さめ 個別包装　2021528
       imageUrl:
           'https://m.media-amazon.com/images/I/71dDVS5etiL._AC_SL1357_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PYPDNTF',
       size: "95mm × 145mm",
-      maker: "",
-      detail: "",
+      maker: "ピップヘルス",
+      detail:
+          "【商品情報】1.携帯に便利で衛生的な個別包装タイプ。2.くちもとPEワイヤー採用。マスクが口に張り付くのを防ぎ、くちもとの空間をキープする。3.耳への負担をやわらげる平ゴムひもを採用。4.花粉・ウイルス飛沫・空気中の微粒子99%カットフィルター採用。5.3段プリーツタイプ立体構造になっているので、鼻や口の息苦しさを軽減。あごまでしっかりカバー。",
       target: "小さい",
     ),
     Mask(
-      //【日本国内検品 広耳】マスク 小さめ PFE BFE VFE 99%以上 200枚入 個包装 子供用 女性用 こども用 耳が痛くならない 不織布 使い捨てマスク 飛沫防止99% PM2.5 風邪予防 防塵 花粉対策
+      //【日本国内検品 広耳】マスク 小さめ PFE BFE VFE 99%以上 200枚入 個包装 子供用 女性用 こども用 耳が痛くならない 不織布 使い捨てマスク 飛沫防止99% PM2.5 風邪予防 防塵 花粉対策 2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71tVffyPS9L._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MPXHLVV',
       size: "90mm × 150mm",
-      maker: "",
-      detail: "",
+      maker: "Hellozebra",
+      detail:
+          "【耳が痛くなりにくい】耳が痛くなりにくいやわらかい平ゴムを採用しております。伸縮性のある15mm幅の耳紐で耳への負担を軽減します。",
       target: "小さい",
     ),
     Mask(
-      //ナノAG+AIRマスク (小さめサイズ 50枚入)
+      //ナノAG+AIRマスク (小さめサイズ 50枚入)　2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61hk4DF1O8L._AC_UL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PXNCLDP',
       size: "95mm × 150mm",
-      maker: "",
-      detail: "",
+      maker: "ナノAG+AIRマスク",
+      detail:
+          "「銀イオンナノAg」を練り込んだナノAG高性能フィルターで0.1μmの微粒子や花粉、BFE、VFE、PFE、紫外線、黄砂を99％以上カット。更に高い抗菌・防臭性能を実現。商品性能は第三者機関の一般財団法人カケンテストセンターにて検証済",
       target: "小さい",
     ),
     Mask(
-      //大人用マスク 50枚入り 春夏シリーズ 不織布マスク 花粉 防塵 使い捨てマスク 風邪 pm2.5 ウィルス ホコリ 3層フィルター カラーマスク(新緑50枚, 女性用サイズ16*9㎝)
+      //大人用マスク 50枚入り 春夏シリーズ 不織布マスク 花粉 防塵 使い捨てマスク 風邪 pm2.5 ウィルス ホコリ 3層フィルター カラーマスク(新緑50枚, 女性用サイズ16*9㎝) 2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51Q40Zb0qIL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
-      size: "90mm × 160mm",
-      maker: "",
-      detail: "",
+      size: "90mm × 160mm", //TODO 表記サイズから許容範囲プラマイ５
+      maker: "MERRY LIFE",
+      detail:
+          "立体プリーツ加工、しっかりと顔の形にフィットする同時に、息苦しさを軽減。耳ひもは痛くなりにくいソフトなゴム素材を利用しております。",
       target: "小さい",
     ),
     ////////////
