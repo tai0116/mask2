@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mask2_app/search/addmask.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 class Mask {
@@ -45,7 +47,8 @@ class _NavBottomState extends State<NavBottom> {
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
-      size: "80mm × 125mm", //本家でチェック済
+      size: "80mm × 125mm",
+      //本家でチェック済
       maker: "白元",
       detail:
           "ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
@@ -66,7 +69,8 @@ class _NavBottomState extends State<NavBottom> {
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51pMbe8%2BwxL._AC_UL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/B08S2RVKQN',
-      size: "85mm × 125mm", //本家でチェック済
+      size: "85mm × 125mm",
+      //本家でチェック済
       maker: "マスコード",
       detail: "平らで柔らかいゴム紐採用。耳が痛くなりにくい平らなゴム紐で、長時間の使用も快適。",
       target: "こども",
@@ -80,7 +84,8 @@ class _NavBottomState extends State<NavBottom> {
       size: "85mm × 125mm",
       maker: "医食同源",
       detail:
-          "立体構造の不織布マスク。3層の不織布フィルターでしっかりガード。形状保持ワイヤーで鼻のラインにぴったりフィット。やわらかい平ゴムを採用し、耳が痛くなりにくい。口元ゆったりの階段式プリーツ。", //本家で確認済
+          "立体構造の不織布マスク。3層の不織布フィルターでしっかりガード。形状保持ワイヤーで鼻のラインにぴったりフィット。やわらかい平ゴムを採用し、耳が痛くなりにくい。口元ゆったりの階段式プリーツ。",
+      //本家で確認済
       target: "こども",
     ),
     Mask(
@@ -263,7 +268,8 @@ class _NavBottomState extends State<NavBottom> {
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51Q40Zb0qIL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
-      size: "90mm × 160mm", //TODO 表記サイズから許容範囲プラマイ５
+      size: "90mm × 160mm",
+      //TODO 表記サイズから許容範囲プラマイ５
       maker: "MERRY LIFE",
       detail:
           "立体プリーツ加工、しっかりと顔の形にフィットする同時に、息苦しさを軽減。耳ひもは痛くなりにくいソフトなゴム素材を利用しております。",
@@ -349,6 +355,17 @@ class _NavBottomState extends State<NavBottom> {
     print(maskListWithSize.length);
   }
 
+  final databaseManager = DatabaseManager();
+  final msk = Msk(
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
+      size: "80mm × 125mm",
+      maker: "白元",
+      detail:
+          "ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
+      target: "こども");
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -402,6 +419,7 @@ class _NavBottomState extends State<NavBottom> {
                             style: TextStyle(fontSize: 15.0),
                           ),
                           onPressed: () {
+                            databaseManager.insertMask(msk);
                             maskListWithSize[index].launchURL();
                           },
                         ),

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Mask {
-  Mask({
+class Msk {
+  Msk({
     required this.imageUrl,
     required this.amazonUrl,
     required this.size,
@@ -16,8 +16,8 @@ class Mask {
   final String target;
   final String detail;
 
-  factory Mask.fromMap(Map<String, dynamic> map) {
-    return new Mask(
+  factory Msk.fromMap(Map<String, dynamic> map) {
+    return new Msk(
       imageUrl: map['imageUrl'] as String,
       amazonUrl: map['amazonUrl'] as String,
       size: map['size'] as String,
@@ -45,9 +45,9 @@ class DatabaseManager {
   final CollectionReference masks =
       FirebaseFirestore.instance.collection('masks');
 
-  Future<void> insertMask(Mask mask) async {
+  Future<void> insertMask(Msk msk) async {
     await masks
-        .add(mask.toMap())
+        .add(msk.toMap())
         .then((value) => print("Mask Added"))
         .catchError((error) => print("Failed to add mask: $error"));
   }
