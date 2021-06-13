@@ -355,16 +355,24 @@ class _NavBottomState extends State<NavBottom> {
     print(maskListWithSize.length);
   }
 
+  void registerMasks() {
+    for (int i = 0; i < maskList.length; i++) {
+      final x = maskList[i];
+      databaseManager.insertMask(x);
+    }
+  }
+
   final databaseManager = DatabaseManager();
-  final msk = Msk(
-      imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
-      size: "80mm × 125mm",
-      maker: "白元",
-      detail:
-          "ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
-      target: "こども");
+
+  //final msk = Msk(
+  //  imageUrl:
+  //    'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
+  //amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
+  //size: "80mm × 125mm",
+  //maker: "白元",
+  //detail:
+  //"ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
+  //target: "こども");
 
   @override
   Widget build(BuildContext context) {
@@ -419,7 +427,7 @@ class _NavBottomState extends State<NavBottom> {
                             style: TextStyle(fontSize: 15.0),
                           ),
                           onPressed: () {
-                            databaseManager.insertMask(msk);
+                            databaseManager.insertMask(registerMasks());
                             maskListWithSize[index].launchURL();
                           },
                         ),
