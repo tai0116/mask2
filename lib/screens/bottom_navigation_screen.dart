@@ -377,7 +377,7 @@ class _NavBottomState extends State<NavBottom> {
     print(maskListWithSize.length);
   }
 
-  registerMasks() {
+  void registerMasks() {
     for (int i = 0; i < maskList.length; i++) {
       final x = maskList[i];
       databaseManager.insertMask(x);
@@ -439,7 +439,7 @@ class _NavBottomState extends State<NavBottom> {
                             style: TextStyle(fontSize: 15.0),
                           ),
                           onPressed: () {
-                            databaseManager.insertMask(registerMasks());
+                            registerMasks();
                             maskListWithSize[index].launchURL();
                           },
                         ),
