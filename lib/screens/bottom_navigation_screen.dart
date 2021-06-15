@@ -19,6 +19,28 @@ class Mask {
   final String target;
   final String detail;
 
+  factory Mask.fromMap(Map<String, dynamic> map) {
+    return new Mask(
+      imageUrl: map['imageUrl'] as String,
+      amazonUrl: map['amazonUrl'] as String,
+      size: map['size'] as String,
+      maker: map['maker'] as String,
+      target: map['target'] as String,
+      detail: map['detail'] as String,
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'imageUrl': this.imageUrl,
+      'amazonUrl': this.amazonUrl,
+      'size': this.size,
+      'maker': this.maker,
+      'target': this.target,
+      'detail': this.detail,
+    };
+  }
+
   /// 関数ももたせられるよ
   /// この関数を呼べばamazonUrlで指定されたサイトが開く
   Future<void> launchURL() async {
@@ -355,7 +377,7 @@ class _NavBottomState extends State<NavBottom> {
     print(maskListWithSize.length);
   }
 
-  void registerMasks() {
+  registerMasks() {
     for (int i = 0; i < maskList.length; i++) {
       final x = maskList[i];
       databaseManager.insertMask(x);
@@ -363,16 +385,6 @@ class _NavBottomState extends State<NavBottom> {
   }
 
   final databaseManager = DatabaseManager();
-
-  //final msk = Msk(
-  //  imageUrl:
-  //    'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
-  //amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
-  //size: "80mm × 125mm",
-  //maker: "白元",
-  //detail:
-  //"ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
-  //target: "こども");
 
   @override
   Widget build(BuildContext context) {
