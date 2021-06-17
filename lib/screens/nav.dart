@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -25,7 +27,8 @@ class _NavState extends State<Nav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MaskME'),
+        title: Text('MaskMe',
+            style: TextStyle(fontFamily: 'FrederickatheGreat', fontSize: 30.0)),
       ),
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),

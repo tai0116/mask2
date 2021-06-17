@@ -9,13 +9,13 @@ class First extends StatefulWidget {
 
 class _FirstState extends State<First> {
   List<String> _texts = [
-    " 80mm × 125mm",
-    " 85mm × 125mm",
-    " 90mm × 125mm",
-    " 90mm × 140mm",
-    " 90mm × 145mm",
-    " 95mm × 140mm",
-    " 95mm × 145mm",
+    "80mm × 125mm",
+    "85mm × 125mm",
+    "90mm × 125mm",
+    "90mm × 140mm",
+    "90mm × 145mm",
+    "95mm × 140mm",
+    "95mm × 145mm",
   ];
 
   List<int> _pageNumbers = [
