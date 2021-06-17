@@ -28,7 +28,7 @@ class _NavState extends State<Nav> {
     return Scaffold(
       appBar: AppBar(
         title: Text('MaskMe',
-            style: TextStyle(fontFamily: 'FrederickatheGreat', fontSize: 30.0)),
+            style: TextStyle(fontFamily: 'Billabong', fontSize: 40.0)),
       ),
       body: Center(
         child: widgetOptions.elementAt(selectedIndex),

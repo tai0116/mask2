@@ -237,7 +237,8 @@ class _MaskDetailState extends State<MaskDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MaskME'),
+        title: Text('MaskMe',
+            style: TextStyle(fontFamily: 'Billabong', fontSize: 40.0)),
       ),
       body: Container(
         width: double.infinity,
