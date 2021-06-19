@@ -70,9 +70,6 @@ class _SearchState extends State<Search> {
   ];
   List<String> visibleMakers = [];
 
-  // todoの一覧リスト変数を用意
-  //List<String> makerList = [];
-
   // テキストフィールドのコントローラー設定
   // コントローラーの宣言
   final TextEditingController _selectMakerController = TextEditingController();
@@ -125,15 +122,6 @@ class _SearchState extends State<Search> {
               style: TextStyle(fontSize: 20.0),
               //controller: null,
             ),
-
-            //Container(
-            //padding: EdgeInsets.all(16.0),
-            //child: Column(
-            //children: [
-            //Text('検索結果がリストで表示されます'),
-            //],
-            //),
-            //),
             SizedBox(
               height: 20,
             ),
@@ -185,10 +173,7 @@ class _SearchState extends State<Search> {
                               builder: (context) =>
                                   MaskDetail(_selectMakerController.text),
                             ));
-                        //}
                       });
-                      // );
-                      //},
                     }),
               ),
             ),

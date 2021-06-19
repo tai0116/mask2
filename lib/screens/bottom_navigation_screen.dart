@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Mask {
   Mask({
+    required this.name,
     required this.amazonUrl,
     required this.imageUrl,
     required this.size,
@@ -12,6 +13,7 @@ class Mask {
     required this.target,
     required this.detail,
   });
+  final String name;
   final String amazonUrl;
   final String imageUrl;
   final String size;
@@ -21,6 +23,7 @@ class Mask {
 
   factory Mask.fromMap(Map<String, dynamic> map) {
     return new Mask(
+      name: map['name'] as String,
       imageUrl: map['imageUrl'] as String,
       amazonUrl: map['amazonUrl'] as String,
       size: map['size'] as String,
@@ -32,6 +35,7 @@ class Mask {
 
   Map<String, dynamic> toMap() {
     return {
+      'name': this.name,
       'imageUrl': this.imageUrl,
       'amazonUrl': this.amazonUrl,
       'size': this.size,
@@ -65,53 +69,72 @@ class NavBottom extends StatefulWidget {
 class _NavBottomState extends State<NavBottom> {
   List<Mask> maskList = [
     Mask(
-      //快適ガード さわやかマスク こども用 30枚入　2021524
+      name: 'フィッティ 7DAYSマスクEXプラス ホワイト キッズサイズ 100枚入', //2021
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/710paeH7MtL._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08KXD134P',
+      size: '80mm × 125mm',
+      maker: "フィッティ",
+      detail:
+          "100枚入 (50枚入中箱×２箱）耳にやさしい幅広ふわふわゴムを採用！長時間着けても耳が痛くなりにくい！3層構造で花粉・ほこり等をしっかりガード！",
+      target: "こども",
+    ),
+    Mask(
+      name: '快適ガード さわやかマスク こども用 30枚入', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81r4z7MhRmL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07657TTVP',
-      size: "80mm × 125mm",
-      //本家でチェック済
+      size: '80mm × 125mm', //本家でチェック済
       maker: "白元",
       detail:
           "ふんわり幅広耳ひもで、耳が痛くありません。口もと快適つるさら素材。0.1㎛の微粒子99％カットフィルター。幼稚園児～小学校低学年用のマスクです。",
       target: "こども",
     ),
     Mask(
-      //　【Amazon限定ブランド】WMT こども マスク 12cm 不織布マスク 51枚 BFE99％ プレミアム品質 2021524
+      name: 'フィッティ 7DAYS マスク 100枚入 キッズサイズ ホワイト', // 2021619
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/61fMaiWrKtL._AC_SL1500_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/dp/B08PCZG54Z',
+          'https://images-na.ssl-images-amazon.com/images/I/91Mtf3rpxsL._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B016DCAOQI',
+      size: "80mm × 125mm",
+      maker: "フィッティ",
+      detail:
+          "【特長】●不織布の三層式フィルタで花粉・ホコリをしっかりガード。●マスク両サイドの加工で顔のラインにジャストフィット。●立体加工なので鼻や口を圧迫しません。不快な息苦しさを解消しました。●耳かけには耳にやさしいゴムを使用。●携帯に便利な個別包装。",
+      target: "こども",
+    ),
+    Mask(
+      name:
+          'WMT DISPOSABLE MASK こども マスク 12cm 不織布マスク 51枚 BFE99％ プレミアム品質', // 2021524
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/716svZ0z3NL._AC_SL1500_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08PCZ843S',
       size: "80mm × 125mm",
       maker: "WMT",
       detail: "【 子供 サイズ/12.5x8cm】【17枚×3袋の合計51枚入り】【取り出しに便利なポケットティッシュタイプ】",
       target: "こども",
     ),
     Mask(
-      //　【 マスコード / MASCODE】Sサイズマスク 2021524
+      name: '【マスコード / MASCODE】不織布マスク　Sサイズ', // 2021524
       imageUrl:
-          'https://images-na.ssl-images-amazon.com/images/I/51pMbe8%2BwxL._AC_UL1000_.jpg',
-      amazonUrl: 'https://www.amazon.co.jp/B08S2RVKQN',
-      size: "85mm × 125mm",
-      //本家でチェック済
+          'https://images-na.ssl-images-amazon.com/images/I/51H%2BZaJYabS._AC_UL1182_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/B0969J3V9N',
+      size: "85mm × 125mm", //本家でチェック済
       maker: "マスコード",
       detail: "平らで柔らかいゴム紐採用。耳が痛くなりにくい平らなゴム紐で、長時間の使用も快適。",
       target: "こども",
     ),
-
     Mask(
-      //医食同源 立体型不織布マスク キッズ 50枚　2021524
+      name: '立体型不織布マスク キッズ 50枚', //　2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/6160eRfyxcL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRLYTZ',
       size: "85mm × 125mm",
       maker: "医食同源",
       detail:
-          "立体構造の不織布マスク。3層の不織布フィルターでしっかりガード。形状保持ワイヤーで鼻のラインにぴったりフィット。やわらかい平ゴムを採用し、耳が痛くなりにくい。口元ゆったりの階段式プリーツ。",
-      //本家で確認済
+          "立体構造の不織布マスク。3層の不織布フィルターでしっかりガード。形状保持ワイヤーで鼻のラインにぴったりフィット。やわらかい平ゴムを採用し、耳が痛くなりにくい。口元ゆったりの階段式プリーツ。", //本家で確認済
       target: "こども",
     ),
     Mask(
-      //エルモア 不織布マスク 子供用 30枚入 2021524
+      name: 'エルモア 不織布マスク 子供用 30枚入', // 2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51zEkLhPWPL._AC_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R7HX96Z',
@@ -122,7 +145,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      // プラスライフ 不織布マスク こどもサイズ 50枚入(個包装) ホワイト2021524
+      name: ' プラスライフ 不織布マスク こどもサイズ 50枚入(個包装) ホワイト', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61syu8GBrYL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08N1KVKM3',
@@ -133,7 +156,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //マスク 子供用 50枚/10枚 柄豊富 カラー 使い捨て 高密度フィルター素材 三層構造不織布 キッズマスク 14*9cm 日本から発送 (男の子パターン, 50枚)　2021524
+      name: '柔らか不織布マスク', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61HVWdU5KSL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MDWN8VX',
@@ -144,7 +167,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //マスク 子供用 50枚 柄豊富 カラー 使い捨て 高密度フィルター素材 三層構造不織布 キッズマスク 14*9cm 日本から発送 (ブルー系柄, 50枚) 2021524
+      name: 'どうぶつえんマスク 子供用 50枚', // 2021524
       imageUrl:
           'https://m.media-amazon.com/images/I/61pERbcLTOL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08TWKPMC8',
@@ -155,7 +178,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り マイメロディ 30枚 MSKP30-A　2021524
+      name: '不織布子供マスク マイメロディ 30枚', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61ebvO5eUOL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYM7HTF',
@@ -166,7 +189,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //スケーター 三層構造 不織布 マスク 子供 箱入り プラレール 30枚 MSKP30-A 2021524
+      name: '不織布子供マスク プラレール 30枚', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71tfcUEcHoL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYLT3DB',
@@ -177,7 +200,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //スケーター 三層構造 不織布 マスク 子供 女性用 箱入り はらぺこあおむし 30枚 MSKP30-A 2021524
+      name: '不織布子供マスク はらぺこあおむし 30枚', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71SDrvNEZYL._AC_SL1100_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07HYJFK24',
@@ -188,7 +211,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //【全国マスク工業会正会員 個包装】3層不織布使い捨てマスク カケンPFE99%カット 女性子供サイズ 1箱50枚入【2020年9月から個包装・品質改良】2021524
+      name: '【Magfine】3層不織布使い捨てマスク  1箱50枚入', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71JyXR4Rm9L._AC_UL1329_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08R3JYJDP',
@@ -199,7 +222,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //【個包装 日本国内検品】マスク 小さめサイズ 50枚入 子供用 女性用 耳痛くならない 三層構造不織布 使い捨てマスク 白 2021524
+      name: '【Hellozebra】三層構造不織布 使い捨てマスク', // 2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71iejzXauIL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08CNJXR99',
@@ -210,7 +233,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "こども",
     ),
     Mask(
-      //[Amazon限定ブランド] HOC アッシュ グレー マスク 子供用 100枚 小さめサイズ 使い捨て 個包装 3層構造 不織布マスク グレーマスク グレー スモール スモールサイズ Sサイズ S 2021524
+      name: '【HOC】アッシュグレーマスク 子供用', // 2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61zvFmWFD-L._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08RHFG71G',
@@ -222,7 +245,18 @@ class _NavBottomState extends State<NavBottom> {
     ),
     ////////////
     Mask(
-      //[Amazonブランド]Presto! マスク 小さめサイズ PM2.5対応 200枚(50枚×4パック) 2021524
+      name: 'アイリスオーヤマ ディスポーザブルマスク 不織布', //2021619
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/61Bq8Bu7U8L._AC_SL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08NVPZJRC',
+      size: "90mm × 145mm",
+      maker: "アイリスオーヤマ",
+      detail:
+          "側面両端Vカット加工しているので、ほほとのすき間を低減し、長時間ぴったりフィットします。耳にやさしいやわらか丸耳ひも採用で耳が痛くなりにくいです。(耳ひも：丸ひも4ｍｍ）",
+      target: "小さい",
+    ),
+    Mask(
+      name: '【Presto!】 快適プレミアムマスク', //2021524
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/91hLsBL5b0L._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B07YY9ZD7M',
@@ -233,7 +267,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //マスク 個包装 30枚 小さめサイズ 145mm 使い捨て 立体型マスク 不織布マスク ほこり 花粉対策 飛沫防止 (1)　2021528
+      name: '【TERUKA】 立体型不織布マスク', //　2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61PPqKAgPPL._AC_SL1001_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08KXT3GYS',
@@ -243,7 +277,17 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //医食同源 立体型不織布マスク 小さめ 50枚
+      name: 'ナノエアーマスク 小さめサイズ 7枚入 PK-NI7S 145×90mm', //　2021619
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/61AID2wJ3AL._AC_SL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/',
+      size: "90mm × 145mm",
+      maker: "アイリスオーヤマ",
+      detail: "ふんわりとやわらかく幅の広い耳ひもを採用することで､長時間装着しても耳が痛くなりにくいです｡",
+      target: "小さい",
+    ),
+    Mask(
+      name: '【医食同源】 立体型不織布マスク', //
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61V3jCHsqsL._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KG',
@@ -253,7 +297,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //ピップ プリーツガード 呼吸快適マスク 30枚入 小さめ 個別包装　2021528
+      name: 'プリーツガード 呼吸快適マスク', //　2021528
       imageUrl:
           'https://m.media-amazon.com/images/I/71dDVS5etiL._AC_SL1357_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PYPDNTF',
@@ -264,7 +308,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //【日本国内検品 広耳】マスク 小さめ PFE BFE VFE 99%以上 200枚入 個包装 子供用 女性用 こども用 耳が痛くならない 不織布 使い捨てマスク 飛沫防止99% PM2.5 風邪予防 防塵 花粉対策 2021528
+      name: '【Hellozebra】三層構造　不織布マスク', //2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71tVffyPS9L._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MPXHLVV',
@@ -275,7 +319,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //ナノAG+AIRマスク (小さめサイズ 50枚入)　2021528
+      name: 'ナノAG+AIRマスク', //　2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61hk4DF1O8L._AC_UL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PXNCLDP',
@@ -286,7 +330,7 @@ class _NavBottomState extends State<NavBottom> {
       target: "小さい",
     ),
     Mask(
-      //大人用マスク 50枚入り 春夏シリーズ 不織布マスク 花粉 防塵 使い捨てマスク 風邪 pm2.5 ウィルス ホコリ 3層フィルター カラーマスク(新緑50枚, 女性用サイズ16*9㎝) 2021528
+      name: '【MERRY LIFE】不織布マスク', //2021528
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/51Q40Zb0qIL._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093H2S7CN',
@@ -299,63 +343,100 @@ class _NavBottomState extends State<NavBottom> {
     ),
     ////////////
     Mask(
-      //(PM2.5対応)快適ガードさわやかマスク レギュラーサイズ 30枚入
+      name: '快適ガードさわやかマスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/616ZDqygl6L._AC_SL1000_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B0141ZPADQ',
       size: "90mm × 165mm",
-      maker: "",
-      detail: "",
+      maker: "快適ガードプロ",
+      detail:
+          "【特長】耳が痛くない ふんわり幅広耳ひも、口もと快適 つるさら素材、立体空間をつくるプリーツ加工、サイド密着加工とノーズフィッター",
       target: "ふつう",
     ),
     Mask(
-      //[Amazon限定ブランド] NAGAHIRO マスク 日本製 ウィルス 飛沫 微粒子 花粉99%カット 高性能フィルター採用 SEK認証 抗菌 防臭 「全国マスク工業会会員」 平ゴム 耳に優しい 不織布 マスク 普通サイズホワイト 7枚入り 4セット（28枚)
+      name: 'アイリスオーヤマ ディスポーザブル プリーツ型マスク ふつうサイズ 120枚入',
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/61T5iqnzHzL._AC_SL1000_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08ZSDJS1Z',
+      size: "90mm × 165mm",
+      maker: "アイリスオーヤマ",
+      detail:
+          "側面両端Vカット加工しているので、ほほとのすき間を低減し、長時間ぴったりフィットします。耳にやさしいやわらか丸耳ひも採用で耳が痛くなりにくいです。(耳ひも:丸ひも4mm)",
+      target: "ふつう",
+    ),
+    Mask(
+      name: 'NAGAHIROマスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/61TD7PJ9GUS._AC_SL1012_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B093G94DQQ',
       size: "90mm × 175mm",
-      maker: "",
-      detail: "",
+      maker: "NAGAHIRO",
+      detail: "耳ゴムにはやわらかな平ゴム（約5ｍｍ）を採用。長時間使用しても耳が痛くなりにくい仕様です。",
       target: "ふつう",
     ),
     Mask(
-      //大王製紙 エリエール ハイパーブロックマスク ウイルスブロック ふつうサイズ 50枚入（日本製）
+      name: 'エリエール ハイパーブロックマスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81UdjYQp4AL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08W2JX5XY',
       size: "90mm × 175mm",
-      maker: "",
-      detail: "",
+      maker: "大王製紙",
+      detail:
+          "外側から包み込むように装着し、やさしい力でしっかりマスクを引き上げるので、すきまを作りにくい構造となっています。マスクの中央部分が高くなるので、空間ができやすい。息苦しさを軽減できるほか、唇にもふれにくい構造となっています。刻印された「エリエール」マークが読める面を外側にして着用してください。",
       target: "ふつう",
     ),
     Mask(
-      //GOJAPAN マスク 210枚入 (7枚×30袋) 1袋1週間分 BFE VFE PFE 99%カットフィルター採用 4層構造 ふつうサイズ 呼吸しやすい
+      name: '【GOJAPAN】 不織布マスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/910YXdXgIkL._AC_SL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08MQGYVG4',
       size: "95mm × 173mm",
-      maker: "",
-      detail: "",
+      maker: "GOJAPAN",
+      detail:
+          "【着け心地の良さと安全性を追求】柔らかいメルトプローン不織布を使用することで、フィット感が高まり、呼吸がしやすく、着け心地が良くなりました。また抗ウィルス効果が高い99%カットフィルターを使用しており、安全に快適に使用いただけます。",
       target: "ふつう",
     ),
     Mask(
-      //医食同源 立体型不織布マスク ふつう 50枚
+      name: '【医食同源】 立体型不織布マスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/71UHQKS9C6L._AC_SL1218_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08PDRF6KH',
       size: "95mm × 175mm",
-      maker: "",
-      detail: "",
+      maker: "医食同源",
+      detail: "マスクの密着性を高め、メガネのくもりを軽減",
       target: "ふつう",
     ),
     Mask(
-      //Coolth Style 日本製 不織布マスク 個包装 50枚 使い捨てマスク 【日本国内カケンテスト認証済】高機能 日本製マスク 普通サイズ：175㎜×95㎜ (不織布マスク)
+      name: '【Coolth Style】不織布マスク',
       imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81uz1uSNIvL._AC_UL1500_.jpg',
       amazonUrl: 'https://www.amazon.co.jp/dp/B08WRXXB4P',
       size: "95mm × 175mm",
-      maker: "",
-      detail: "",
+      maker: "Coolth Style",
+      detail:
+          "【耳が痛くなりにくい】鼻にはノーズフィット、頬はカーブ形状にすることで、顔にフィットしずれにくいです。耳紐は約4mm幅の平紐を使用しているため、長時間マスクを着用していても、痛くなりにくいです。 個包装の不織布の使い捨てタイプで衛生的にご使用いただけます。",
+      target: "ふつう",
+    ),
+    Mask(
+      name: '【SETSUGEN】不織布マスク', //2021619
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/619tHwNLvES._AC_SL1200_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08TVCLM6V',
+      size: "95mm × 175mm",
+      maker: "SETSUGEN",
+      detail:
+          "オメガ形状プリーツ 口元ゆったり立体加工。商品サイズ:約横175mm,縦95mm、普通サイズ、男女兼用、一般市民向け、業務者向け。ノーズフィルターと４段オメガプリーツ形状により、顔とのフィット感を向上し、エア漏れを軽減します。一般的な段々プリーツに比べてオメガ状のプリーツの方が、口元に空間を作りますので、息苦しさを軽減します。",
+      target: "ふつう",
+    ),
+    Mask(
+      name: '【3AIR】不織布マスク', //2021619
+      imageUrl:
+          'https://images-na.ssl-images-amazon.com/images/I/61OPkAaH-nL._AC_UL1004_.jpg',
+      amazonUrl: 'https://www.amazon.co.jp/dp/B08V8D36YF',
+      size: "95mm × 175mm",
+      maker: "3AIR",
+      detail:
+          "【オメガプリーツ】口元の贅沢空間により口紅を気にせずに使用できます。ズレにくく、長時間の使用でも肌ストレスをあたえません。【ふわのびゴム】長時間使用しても耳が痛くなりません。【個別包装】便利な個別包装、持ち運びにも便利、より衛生でお使いいただけます。",
       target: "ふつう",
     ),
   ];
