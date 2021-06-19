@@ -8,65 +8,31 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   List<String> makers = [
-    'スケーター',
-    'ルカ LOOKA',
-    '虎屋',
-    'パインクリエイト',
-    '三次元',
-    '横井定 ヨコイサダ',
-    '美研繊維',
-    'ピュアスマイル',
-    'ユニチャーム',
-    '白元',
-    'バンダイ BANDAI',
-    'エニー ANYe',
-    ' DR.C医薬 ディーアールシーイヤク',
-    'グローバルジャパン',
-    'アミナコレクション Kahiko カヒコ',
-    'BLOOM LuXE',
-    '小松マテーレ',
-    'エイトワール EITORE',
-    'クー COO',
-    'セイル',
-    'サンエックス San-X',
-    'FYDELITY',
-    '玉川衛材 フィッティ',
-    'ヒサゴ HISAGO',
-    'コバオリ KOBAORI',
-    'サクラスリングプロジェクト Sakura Sling project',
-    'テクナード',
-    'コーワ KOWA',
-    '原田産業',
-    'ミック オールクール ALLCOOL',
-    'プレーリードッグ',
-    'クールンビオ COOLNBIO',
-    'ドムドムハンバーガー DOMDOM',
-    'SPICE スパイス',
-    'アミナコレクション カヤ',
-    'センバドー',
-    'サンスマイル マスキス sun smile Maskiss',
-    'アイリスオーヤマ IRISOHYAMA',
-    '玉川衛材',
-    'アミナコレクション チャイハネ',
-    'ユアーショップ',
-    'サンスター文具 sun-star',
-    'レッドスパイス RED SPYCE',
-    'BMC ビーエムシー',
-    'アズフィット',
-    'ciel シエル',
-    'ワイティーエス YTS',
-    'バイナー VINER',
-    'マテリアルリンク Material LINK',
-    'ショウワノート',
-    'サンタン SANTAN',
-    '絹屋',
-    'アッソブ AS2OV',
-    'a-freak エーフリーク',
-    'りぶはあと',
-    'JUNKADO South Quay サウスキー',
-    'アルファックス alphax',
-    'ファイン',
-    'サンスマイル sun smile',
+    'フィッティ', //
+    'スケーター', //
+    'WMT', //
+    'マスコード', //
+    '医食同源', //
+    'エルモア', //
+    'プラスライフ', //
+    'MERRY LIFE', //
+    '白元', //
+    'Magfine', //
+    'Hellozebra', //
+    'HOC', //
+    'アイリスオーヤマ', //
+    'Presto', //
+    'TERUKA', //
+    'ピップヘルス', //
+    'ナノAG+AIRマスクE', //
+    'MERRY LIFE', //
+    '快適ガードプロ', //
+    'NAGAHIRO', //
+    '大王製紙', //
+    'GOJAPAN', //
+    'Coolth Style', //
+    'SETSUGEN', //
+    '3AIR', //
   ];
   List<String> visibleMakers = [];
 
