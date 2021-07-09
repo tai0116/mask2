@@ -455,7 +455,7 @@ class _NavBottomState extends State<NavBottom> {
         .toList();
 
     setState(() {});
-    print(maskListWithSize.length);
+    //print(maskListWithSize.length);
   }
 
   void registerMasks() {

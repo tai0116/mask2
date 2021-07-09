@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.taisuke.mask2_app">
+    package="net.taisuke.mask1_app">
    <application
         android:label="mask2_app"
         android:icon="@mipmap/launcher_icon">

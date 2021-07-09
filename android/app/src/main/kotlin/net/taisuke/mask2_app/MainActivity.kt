@@ -1,4 +1,4 @@
-package net.taisuke.mask2_app
+package net.taisuke.mask1_app
 
 import io.flutter.embedding.android.FlutterActivity
 
