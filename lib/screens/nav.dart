@@ -27,6 +27,7 @@ class _NavState extends State<Nav> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('MaskMe',
             style: TextStyle(fontFamily: 'Billabong', fontSize: 40.0)),
       ),
